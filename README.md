@@ -1,2 +1,2 @@
 # MCLONE
-Maxum Cloning Brand 
+Mogid Khan Termux Brand 
